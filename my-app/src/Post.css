@@ -1,0 +1,149 @@
+/* Ensure the body and html allow for full height and scrolling */
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Prevents body from scrolling */
+  }
+  
+  /* Container for the entire posts component */
+  .post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-height: 80vh; /* Adjust as needed to fit within viewport */
+    overflow-y: auto; /* Enables vertical scrolling within this container */
+    background-color: #f9f9f9; /* Optional: Light background for the container */
+  }
+  
+  /* Button styling */
+  .back-button1,
+  .load-posts-button,
+  .add-file-button,
+  .star-icon-button,
+  .subscribe-b1,
+  .reset-subscription-button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    
+    transition: background-color 0.3s, color 0.3s; /* Smooth color transitions */
+  }
+  
+  .back-button1 {
+    background-color: #0f0b3a;
+  }
+  .back-button1:hover{
+    transform: scale(1.2);
+    background-color: #fb00de;
+    color: rgb(255, 255, 255);
+    
+  }
+  
+  .load-posts-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  .add-file-button {
+    background-color: #2196F3; /* Blue */
+    color: white;
+  }
+  
+  .star-icon-button {
+    background-color: #cd0cd0; /* Gold */
+    color: rgb(236, 216, 34);
+  }
+  
+  .subscribe-b1 {
+    background-color: #FF5722; /* Deep Orange */
+    color: white;
+  }
+  
+  .reset-subscription-button {
+    background-color: #9d1616; /* Grey */
+    color: white;
+  }
+  
+  /* Input file styling (hidden) */
+  #file-input {
+    display: none;
+  }
+  
+  /* Container for media items */
+  .images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%; /* Ensure it uses the full width of the container */
+  }
+  
+  /* Wrapper for each media item */
+  .media-wrapper {
+    position: relative;
+    width: 300px; /* Adjust width as needed */
+    height: 250px; /* Adjust height as needed */
+    overflow: hidden;
+    background-color: #f0f0f0;
+    border-radius: 10px; /* Optional: Rounded corners */
+  }
+  
+  /* Media item styling */
+  .post-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Group of icons below each media item */
+  .icon-group {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    border-radius: 0 0 10px 10px; /* Optional: Rounded corners for the icon group */
+  }
+  
+  /* Icon button styling */
+  .icon-button {
+    cursor: pointer;
+    
+    font-size: 18px;
+    transition: color 0.3s; /* Smooth color transitions */
+  }
+  
+  .icon-button:hover {
+    color: #e6e6e6; 
+    color: #0f0b3a;/* Example hover effect */
+  }
+  
+  /* Highlighted text */
+  .highlight {
+    font-weight: bold;
+    color: rgb(17, 9, 9);
+  }
+  
+  /* No media message styling */
+  .no-images-message {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+  }
+  .like-button, .dislike-button {
+    color: white;
+}
+
+/* Hover effect for all buttons */
+.icon-button:hover {
+    color: #e6e6e6;
+}

@@ -1,0 +1,102 @@
+/* Location.css */
+
+.location-container {
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #fbfbfb, #b4a9b4);
+    box-shadow: 10px 10px 20px #bebebe,
+                -10px -10px 20px #5c96c6;
+    max-width: 400px;
+    margin: 40px auto;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.location-container:hover {
+    transform: scale(1.02);
+}
+
+/* Error and loading messages */
+.error-message {
+    color: #e74c3c;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.loading {
+    color: #3498db;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+
+.location-container::before {
+    width: 100px;
+    height: 100px;
+    top: -30px;
+    left: -30px;
+}
+
+.location-container::after {
+    width: 80px;
+    height: 80px;
+    bottom: -30px;
+    right: -30px;
+}
+
+/* Header styles */
+.location-container h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #3a1f33;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Paragraph styles */
+.location-container p {
+    margin: 8px 0;
+    font-size: 18px;
+    color: #3a1bc3;
+    cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    .location-container {
+        padding: 15px;
+        max-width: 90%;
+    }
+    
+    .location-container h2 {
+        font-size: 22px;
+    }
+    
+    .location-container p {
+        font-size: 16px;
+    }
+}
+.back-button3 {
+    
+    top: 20px;
+    left: 80px;
+    margin-left: 0px;
+    padding: 10px 20px;
+    background-color: #061c36;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button3:hover {
+    background-color: #9620ea;
+    color: white;
+}

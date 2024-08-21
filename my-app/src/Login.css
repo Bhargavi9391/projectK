@@ -1,0 +1,235 @@
+/* Apply styles to the body to ensure stars are visible in the background and to center the login container */
+body {
+    background: radial-gradient(circle, #b91fd4 0%, #e2e2e2 100%);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars due to star animations */
+    position: relative; /* Positioning context for stars */
+}
+
+/* Container for the star background */
+.stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide overflow due to star animations */
+    z-index: 1; /* Place stars behind the login container */
+}
+
+/* Style for individual stars */
+.mini-star {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    clip-path: polygon(
+        50% 5%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+    ); /* Star shape */
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(10, 37, 101, 0.8);
+    animation: fadeIn 1s ease-in forwards, move-stars 4s linear forwards 1s, fadeOut 1s ease-in forwards 3s; /* Faster movement */
+}
+
+/* Keyframe animations for stars */
+@keyframes move-stars {
+    0% {
+        transform: translateY(0) translateX(0); /* Start position */
+    }
+    100% {
+        transform: translateY(50vh) translateX(-100vw); /* Move to the left and bottom */
+    }
+}
+
+/* Star colors, positions, and animation durations */
+.mini-star:nth-of-type(1) { background: #FF5733; top: 5%; left: 80%; animation-duration: 1s; }
+.mini-star:nth-of-type(2) { background: #33FF57; top: 30%; left: 95%; animation-duration: 2s; }
+.mini-star:nth-of-type(3) { background: #3357FF; top: 60%; left: 15%; animation-duration: 3s; }
+/* Continue similarly for all stars */
+
+/* Style for the login container */
+
+.login-container {
+    width: 300px;
+    margin-top: 130px;
+    margin-left: 420px;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ec1b83, #74a706, #2aeada, #1f0bba);
+    background-size: 400% 400%;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2; /* Ensure the container is on top of stars */
+    animation: rotate 7s ease-in-out forwards, disco 7s ease; /* Disco effect stops after 7s */
+}
+
+/* Keyframe animations for login container */
+@keyframes disco {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+@keyframes rotate {
+    0% {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/* Transition to static gradient after rotation */
+.login-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+   
+    background: linear-gradient(55deg, white, rgb(38, 52, 143)); /* Static background with white and blue */
+    background-size: 100% 100%; /* No animation, solid background */
+    z-index: -1;
+    animation: none; /* Remove animation */
+    opacity: 0; /* Initially hidden */
+    animation: showBackground 0.4s ease-in 7s forwards; /* Delay to match rotation time, then show */
+}
+
+/* Keyframe to fade in the final static background */
+@keyframes showBackground {
+    to {
+        opacity: 1;
+    }
+}
+
+
+h2 {
+    text-align: center;
+    color: #05042c;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out; /* Add fade-in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 17px;
+    color: #1e1d1d;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+label:hover {
+    transform: scale(1.2);
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    width: 93%;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+input:hover {
+    transform: scale(0.9);
+}
+
+button {
+    background: #202c2c;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #150707;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    margin-top: 10px;
+    text-align: center;
+    color: #d9534f;
+}
+
+.rotating-message {
+    position: absolute;
+    top: 50px; /* Adjust this value to position it higher or lower */
+    width: 100%;
+    margin-bottom: 500px;
+    text-align: center;
+    letter-spacing: 20px; /* Adjust the letter spacing as needed */
+    font-size: 40px;
+    color: #2c2828;
+    animation: moveRightToLeft 15s infinite linear;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    z-index: 3; /* Ensure it stays above the stars */
+}
+
+@keyframes moveRightToLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes translateY {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Adjust the Y translation as needed */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Add this to apply the animation to each letter */
+.rotating-message span {
+    display: inline-block;
+    animation: translateY 1s infinite; /* Adjust the duration as needed */
+    /* Optionally, you can add a delay to create a cascading effect */
+}

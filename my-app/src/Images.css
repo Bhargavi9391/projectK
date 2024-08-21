@@ -1,0 +1,300 @@
+.images-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    background-color: #acc4de;
+}
+
+.images-header {
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center;
+    gap: 20px; /* Space between buttons */
+}
+
+.images-header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #333;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.image-item {
+    flex: 1 1 calc(33.333% - 15px);
+    max-width: calc(33.333% - 15px);
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.image-actions {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 12px 12px;
+}
+
+.image-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    color: white;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.image-actions button:hover {
+    color: #f39c12;
+}
+
+.like-icon.liked,
+.dislike-icon.disliked {
+    color: #f39c12;
+}
+
+.comment-box {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.comment-box.active {
+    display: block;
+}
+
+.comment-box textarea {
+    width: calc(100% - 10px);
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.comment-box button {
+    display: block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #8b05bb;
+    color: rgb(255, 254, 254);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.comment-box button:hover {
+    background-color: #04162e;
+    color: white;
+}
+
+.comment-list {
+    margin-top: 10px;
+}
+
+.comment-list p {
+    margin: 5px 0;
+    padding: 8px 12px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff0000;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 0.3s;
+}
+
+.delete-btn:hover {
+    color: #cc0000;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #ff0000;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #cc0000;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    background-color: #110b41;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.filter-button:hover {
+    background-color: #15bf4e;
+}
+
+.back-buttons {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #fefeff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.back-buttons:hover {
+    color: #a21010;
+}
+
+.home-button {
+    background: none;
+    border: none;
+    color: #191c1f;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.home-button:hover {
+    color: #bac8d8;
+}
+
+/* Container for the trending images */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    height: 400px; /* Set a fixed height for the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.top-images {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping of images */
+    justify-content: flex-start; /* Align images to the start */
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1300px;
+    height: 200px; /* Set the height for the top images container */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding-bottom: 10px; /* Add padding to avoid scrollbar overlap */
+}
+
+.top-image {
+    flex: 0 0 auto; /* Prevent the images from shrinking */
+    width: 200px; /* Set a fixed width for each image */
+    height: 100%; /* Make the image height 100% of the container height */
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image styling */
+.top-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 15px; /* Match border radius */
+}
+
+/* Header with title and back button */
+.top-images-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.top-images-header h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5em; /* Adjust as needed */
+}
+
+.back-buttons {
+    background: green;
+    border: none;
+    font-size: 20px;
+    color: #1e1c1c;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin: 0; /* Remove margin to align with the title */
+}
+
+.back-buttons:hover {
+    color: #fbfbfb;
+}
+
+/* Message when no trending images */
+.no-images-message {
+    text-align: center;
+    font-size: 1.5em;
+    color: #e9dfdf;
+    margin-top: 30px;
+}
+
+.subscribe-b1 {
+    background-color: #FF5722; /* Deep Orange */
+    color: white;
+  }
+  
+  .reset-subscription-button {
+    background-color: #9d1616; /* Grey */
+    color: white;
+  }

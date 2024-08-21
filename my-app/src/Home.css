@@ -1,0 +1,141 @@
+body {
+    background: linear-gradient(45deg, #eeeaef , #d275b6 );
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden; /* Prevent scroll bars due to animations */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.home-container {
+    background: linear-gradient(45deg,  rgb(21, 18, 99),rgb(75, 154, 154)); /* Background of the container */
+    padding: 70px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Pronounced shadow */
+    transform-style: preserve-3d; /* Enable 3D effects */
+    perspective: 1000px; /* Set perspective for 3D transformations */
+    position: relative;
+
+}
+
+.search-container {
+    position: relative; /* Relative positioning for the container */
+    margin-bottom: 20px;
+}
+
+.input-wrapper {
+    position: relative; /* Positioning for the input and icons */
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 12px 60px 12px 40px; /* Padding to fit icons inside */
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(239, 235, 235, 0.2);
+    width: 69%; /* Full width to fit the container */
+    transition: box-shadow 0.3s ease;
+}
+
+.search-container input:focus {
+    /* Keeping the box-shadow consistent to avoid movement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filters-icon {
+    position: absolute;
+    left: 460px; /* Position the filters icon outside the input */
+    font-size: 20px;
+    background: none;
+    border: none;
+    
+    cursor: pointer;
+}
+
+.search-icon, .microphone-icon {
+    position: absolute;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-icon {
+    right: 460px; 
+    bottom: 15px; /* Position the search icon inside the input field */
+}
+
+.microphone-icon {
+    right: 60px;
+    font-size: 20px; /* Position the microphone icon inside the input field */
+}
+
+
+.search-icon:hover, .microphone-icon:hover, .filters-icon:hover {
+    color: #f7fbfd; /* Change color on hover */
+}
+
+.button-row, .info-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap if needed */
+    margin-top: 20px;
+}
+
+.button-row button, .info-row button {
+    width: 150px;
+    height: 60px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #3498db;
+    border-radius: 30px;
+    background: linear-gradient(45deg,rgb(167, 42, 192),  rgb(255, 255, 255));
+    color: black;
+    cursor: pointer;
+    font-family:monospace;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.2;
+    white-space: normal;
+}
+
+.button-posts:hover {
+    background: #c8d283; 
+    transform: scale(1.2); /* Dark blue color */
+}
+
+.button-images:hover {
+    background: #863a3a;
+    transform: scale(1.2); /* Orange color */
+}
+
+.button-videos:hover {
+    background: #b36c20;
+    transform: scale(1.2); /* Lime green color */
+}
+
+.button-history:hover {
+    background: #ff1493;
+    transform: scale(1.2); /* Deep pink color */
+}
+
+.button-subscribers:hover {
+    background: #ff4500;
+    transform: scale(1.2); /* Orange red color */
+}
+
+.button-memes:hover {
+    background: #00ced1;
+    transform: scale(1.2); /* Dark turquoise color */
+}

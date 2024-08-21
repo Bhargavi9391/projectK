@@ -1,0 +1,338 @@
+
+
+
+.star {
+    position: absolute;
+    width: 230px;
+    height: 240px;
+    margin-top: 70px;
+    background: rgb(247, 164, 9); /* Bright gold color */
+    clip-path: polygon(
+        50% 5%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+    ); /* Star shape */
+    border-radius: 300px; /* Adds a rounded effect to the star */
+    z-index: 1;
+    box-shadow: 
+        0 0 50px rgba(106, 135, 238, 0.8),
+        0 0 100px rgba(255, 215, 0, 0.8),
+        0 0 150px rgba(23, 189, 89, 0.8),
+        0 0 200px rgba(40, 3, 69, 0.8);
+    animation: rotate-star 10s linear infinite, glow 1.5s infinite, pulsate 2s infinite;
+    transform-origin: center center; /* Center the rotation around its middle */
+}
+
+.login-btn{
+    width: 30%;
+    height: 50px;
+    background-color: white;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    transform: translateY(130px);
+    margin-left: 700px;
+}
+.login-btn:hover{
+   background-color: #FF33A6;
+}
+
+
+
+@keyframes rotate-star {
+    0% {
+        transform: rotate(0deg);
+        top: 5%;
+        left: 12%;
+    }
+    50% {
+        transform: rotate(180deg);
+        top: 10%;
+        left: 60%;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+        top: 30%;
+        left: 50%;
+    }
+}
+.star{
+    animation: rotate-star 5s ease-in-out forwards;
+
+}
+
+
+
+
+/* Pulsating Animation */
+@keyframes pulsate {
+    0% { 
+        transform: scale(1); 
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); 
+    }
+    50% { 
+        transform: scale(1.2); 
+        box-shadow: 0 0 40px rgba(255, 215, 0, 1); 
+    }
+    100% { 
+        transform: scale(1); 
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); 
+    }
+}
+
+/* Border Shining Effect for All Sides */
+@keyframes shine {
+    0% {
+        border-color: #fcfcfc; /* Gold Color */
+        box-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700;
+    }
+    50% {
+        border-color: #fffffe; /* Lighter Gold */
+        box-shadow: 0 0 30px #FFEC8B, 0 0 40px #FFEC8B, 0 0 50px #FFEC8B;
+    }
+    100% {
+        border-color: #fefefd;
+        box-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700;
+    }
+}
+
+/* Eyes styling */
+.eye {
+    position: absolute;
+    width: 18px;
+    height: 30px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.left-eye {
+    top: 40%;
+    left: 35%;
+    background: radial-gradient(circle, #f2efef, #070707 35%);
+}
+
+.right-eye {
+    top: 40%;
+    right: 35%;
+    background: radial-gradient(circle, #f2efef, #070707 35%);
+}
+
+/* Smile styling */
+.smile {
+    position: absolute;
+    width: 58px;
+    height: 25px;
+    border-bottom: 8px solid #fefbfb;
+    border-radius: 0px 1px 30px 30px;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+/* Move Stars Animation */
+@keyframes move-stars {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100vw);
+    }
+}
+
+.star-talk {
+    font-size: 67px;
+    font-weight: bold;
+    color: #323738; /* Single color */
+    font-family: 'Lucida Sans', 'Lucida Grande', Geneva, sans-serif;
+    text-align: center;
+    position: relative;
+    margin-top: 150px;
+    letter-spacing: 0px; /* No initial letter spacing */
+}
+
+.letter {
+    display: inline-block;
+    position: relative;
+    animation: move-letter 1s ease-in-out forwards; /* Play animation once and stop */
+}
+
+/* Letter movement and spacing animation */
+@keyframes move-letter {
+    0% {
+        transform: translateY(-40px);
+        letter-spacing:270px; /* No spacing initially */
+    }
+    50% {
+        transform: translateY(-50px); /* Adjust this value for more/less movement */
+        letter-spacing: 60px; /* Introduce spacing during the translation */
+    }
+    100% {
+        transform: translateY(50px);
+        letter-spacing: 0px; /* Keep the spacing after the translation */
+    }
+}
+
+/* Sequential animation delays for letters */
+.letter:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.letter:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.letter:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.letter:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.letter:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.letter:nth-child(6) {
+    animation-delay: 1s;
+}
+
+.letter:nth-child(7) {
+    animation-delay: 1.2s;
+}
+
+.letter:nth-child(8) {
+    animation-delay: 1.4s;
+}
+.stars-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+  
+/* Mini stars basic styling */
+.mini-star {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    clip-path: polygon(
+        50% 5%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+    ); /* Star shape */
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(10, 37, 101, 0.8);
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease-in forwards, move-stars 4s linear forwards 1s, fadeOut 1s ease-in forwards 3s; /* Faster movement */
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1; /* Become visible */
+    }
+}
+  
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0; /* Fade out */
+    }
+}
+  
+@keyframes move-stars {
+    0% {
+        transform: translateY(0) translateX(0); /* Start position */
+    }
+    100% {
+        transform: translateY(100vh) translateX(-100vw); /* Move to the left and bottom */
+    }
+}
+
+/* Star colors, positions, and animation durations */
+.mini-star:nth-of-type(1) { background: #FF5733; top: 5%; left: 80%; animation-duration: 1s; }
+.mini-star:nth-of-type(2) { background: #33FF57; top: 30%; left: 95%; animation-duration: 2s; }
+.mini-star:nth-of-type(3) { background: #3357FF; top: 60%; left: 15%; animation-duration: 3s; }
+.mini-star:nth-of-type(4) { background: #F333FF; top: 70%; left: 65%; animation-duration: 4s; }
+.mini-star:nth-of-type(5) { background: #FF33A6; top: 80%; left: 35%; animation-duration: 5s; }
+.mini-star:nth-of-type(6) { background: #33FFF5; top: 15%; left: 20%; animation-duration: 6s; }
+.mini-star:nth-of-type(7) { background: #FFC300; top: 50%; left: 70%; animation-duration: 7s; }
+.mini-star:nth-of-type(8) { background: #DAF7A6; top: 25%; left: 10%; animation-duration: 8s; }
+.mini-star:nth-of-type(9) { background: #FF6F61; top: 40%; left: 85%; animation-duration: 9s; }
+.mini-star:nth-of-type(10) { background: #C70039; top: 55%; left: 30%; animation-duration: 10s; }
+.mini-star:nth-of-type(11) { background: #581845; top: 70%; left: 50%; animation-duration: 11s; }
+.mini-star:nth-of-type(12) { background: #900C3F; top: 85%; left: 75%; animation-duration: 12s; }
+.mini-star:nth-of-type(13) { background: #FFC300; top: 10%; left: 60%; animation-duration: 13s; }
+.mini-star:nth-of-type(14) { background: #FF5733; top: 25%; left: 40%; animation-duration: 14s; }
+.mini-star:nth-of-type(15) { background: #33FF57; top: 40%; left: 80%; animation-duration: 15s; }
+.mini-star:nth-of-type(16) { background: #3357FF; top: 55%; left: 20%; animation-duration: 16s; }
+.mini-star:nth-of-type(17) { background: #F333FF; top: 70%; left: 70%; animation-duration: 17s; }
+.mini-star:nth-of-type(18) { background: #FF33A6; top: 85%; left: 40%; animation-duration: 18s; }
+.mini-star:nth-of-type(19) { background: #33FFF5; top: 10%; left: 85%; animation-duration: 19s; }
+.mini-star:nth-of-type(20) { background: #FFC300; top: 25%; left: 30%; animation-duration: 20s; }
+.mini-star:nth-of-type(21) { background: #DAF7A6; top: 40%; left: 60%; animation-duration: 21s; }
+.mini-star:nth-of-type(22) { background: #FF6F61; top: 55%; left: 15%; animation-duration: 22s; }
+.mini-star:nth-of-type(23) { background: #C70039; top: 70%; left: 50%; animation-duration: 23s; }
+.mini-star:nth-of-type(24) { background: #581845; top: 85%; left: 25%; animation-duration: 24s; }
+.mini-star:nth-of-type(25) { background: #900C3F; top: 10%; left: 45%; animation-duration: 25s; }
+.mini-star:nth-of-type(26) { background: #FFC300; top: 25%; left: 75%; animation-duration: 26s; }
+.mini-star:nth-of-type(27) { background: #FF5733; top: 40%; left: 10%; animation-duration: 27s; }
+.mini-star:nth-of-type(28) { background: #33FF57; top: 55%; left: 80%; animation-duration: 28s; }
+.mini-star:nth-of-type(29) { background: #3357FF; top: 70%; left: 20%; animation-duration: 29s; }
+.mini-star:nth-of-type(30) { background: #F333FF; top: 85%; left: 60%; animation-duration: 30s; }
+.mini-star:nth-of-type(31) { background: #FF33A6; top: 10%; left: 40%; animation-duration: 31s; }
+.mini-star:nth-of-type(32) { background: #33FFF5; top: 25%; left: 90%; animation-duration: 32s; }
+.mini-star:nth-of-type(33) { background: #FFC300; top: 40%; left: 30%; animation-duration: 33s; }
+.mini-star:nth-of-type(34) { background: #DAF7A6; top: 55%; left: 70%; animation-duration: 34s; }
+.mini-star:nth-of-type(35) { background: #FF6F61; top: 70%; left: 10%; animation-duration: 35s; }
+.mini-star:nth-of-type(36) { background: #C70039; top: 85%; left: 50%; animation-duration: 36s; }
+.mini-star:nth-of-type(37) { background: #581845; top: 10%; left: 20%; animation-duration: 37s; }
+.mini-star:nth-of-type(38) { background: #900C3F; top: 25%; left: 55%; animation-duration: 38s; }
+.mini-star:nth-of-type(39) { background: #FFC300; top: 40%; left: 85%; animation-duration: 39s; }
+.mini-star:nth-of-type(40) { background: #FF5733; top: 55%; left: 30%; animation-duration: 40s; }
+.mini-star:nth-of-type(41) { background: #33FF57; top: 70%; left: 65%; animation-duration: 41s; }
+.mini-star:nth-of-type(42) { background: #3357FF; top: 85%; left: 15%; animation-duration: 42s; }
+.mini-star:nth-of-type(43) { background: #F333FF; top: 10%; left: 75%; animation-duration: 43s; }
+.mini-star:nth-of-type(44) { background: #FF33A6; top: 25%; left: 40%; animation-duration: 44s; }
+.mini-star:nth-of-type(45) { background: #33FFF5; top: 40%; left: 80%; animation-duration: 45s; }
+.mini-star:nth-of-type(46) { background: #FFC300; top: 55%; left: 25%; animation-duration: 46s; }
+.mini-star:nth-of-type(47) { background: #DAF7A6; top: 70%; left: 55%; animation-duration: 47s; }
+.mini-star:nth-of-type(48) { background: #FF6F61; top: 85%; left: 10%; animation-duration: 48s; }
+.mini-star:nth-of-type(49) { background: #C70039; top: 10%; left: 90%; animation-duration: 49s; }
+.mini-star:nth-of-type(50) { background: #581845; top: 25%; left: 60%; animation-duration: 50s; }
+.mini-star:nth-of-type(51) { background: #900C3F; top: 40%; left: 25%; animation-duration: 51s; }
+.mini-star:nth-of-type(52) { background: #FFC300; top: 55%; left: 80%; animation-duration: 52s; }
+.mini-star:nth-of-type(53) { background: #FF5733; top: 70%; left: 15%; animation-duration: 53s; }
+.mini-star:nth-of-type(54) { background: #33FF57; top: 85%; left: 65%; animation-duration: 54s; }
+.mini-star:nth-of-type(55) { background: #3357FF; top: 10%; left: 50%; animation-duration: 55s; }
+.mini-star:nth-of-type(56) { background: #F333FF; top: 25%; left: 30%; animation-duration: 56s; }
+.mini-star:nth-of-type(57) { background: #FF33A6; top: 40%; left: 75%; animation-duration: 57s; }
+.mini-star:nth-of-type(58) { background: #33FFF5; top: 55%; left: 20%; animation-duration: 58s; }
+.mini-star:nth-of-type(59) { background: #FFC300; top: 70%; left: 60%; animation-duration: 59s; }
+.mini-star:nth-of-type(60) { background: #DAF7A6; top: 85%; left: 35%; animation-duration: 60s; }
+.mini-star:nth-of-type(61) { background: #FF6F61; top: 10%; left: 80%; animation-duration: 61s; }
+.mini-star:nth-of-type(62) { background: #C70039; top: 25%; left: 45%; animation-duration: 62s; }
+.mini-star:nth-of-type(63) { background: #581845; top: 40%; left: 90%; animation-duration: 63s; }
+.mini-star:nth-of-type(64) { background: #900C3F; top: 55%; left: 50%; animation-duration: 64s; }
+.mini-star:nth-of-type(65) { background: #FFC300; top: 70%; left: 10%; animation-duration: 65s; }
+.mini-star:nth-of-type(66) { background: #FF5733; top: 85%; left: 80%; animation-duration: 66s; }
+.mini-star:nth-of-type(67) { background: #33FF57; top: 10%; left: 20%; animation-duration: 67s; }
+.mini-star:nth-of-type(68) { background: #3357FF; top: 25%; left: 60%; animation-duration: 68s; }
+.mini-star:nth-of-type(69) { background: #F333FF; top: 40%; left: 85%; animation-duration: 69s; }
+.mini-star:nth-of-type(70) { background: #FF33A6; top: 55%; left: 30%; animation-duration: 70s; }
+.mini-star:nth-of-type(71) { background: #33FFF5; top: 70%; left: 70%; animation-duration: 71s; }
+.mini-star:nth-of-type(72) { background: #FFC300; top: 85%; left: 15%; animation-duration: 72s; }
+.mini-star:nth-of-type(73) { background: #DAF7A6; top: 10%; left: 50%; animation-duration: 73s; }
+.mini-star:nth-of-type(74) { background: #FF6F61; top: 25%; left: 20%; animation-duration: 74s; }
+.mini-star:nth-of-type(75) { background: #C70039; top: 40%; left: 55%; animation-duration: 75s; }
+.mini-star:nth-of-type(76) { background: #581845; top: 55%; left: 90%; animation-duration: 76s; }
+.mini-star:nth-of-type(77) { background: #900C3F; top: 70%; left: 25%; animation-duration: 77s; }
+.mini-star:nth-of-type(78) { background: #FFC300; top: 85%; left: 65%; animation-duration: 78s; }
+.mini-star:nth-of-type(79) { background: #FF5733; top: 10%; left: 75%; animation-duration: 79s; }
+.mini-star:nth-of-type(80) { background: #33FF57; top: 25%; left: 40%; animation-duration: 80s; }
